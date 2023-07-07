@@ -3,7 +3,12 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @articles = Article.all
+    if params[:query].present?
+      @query = params[:query]
+      @articles = Article.where("title LIKE ?", "%#{@query}%")
+    else
+      @articles = Article.all
+    end
   end
 
 
@@ -56,6 +61,11 @@ class ArticlesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def search
+    @query = params[:query]
+    @articles = Article.where("title LIKE ?", "%#{@query}%")
   end
   
 

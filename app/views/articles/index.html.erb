@@ -1,3 +1,9 @@
+<%= form_tag articles_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], placeholder: 'Search articles' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+
 <!-- Add the link to create a new article -->
 <%= link_to 'New Article', new_article_path %>
 <% @articles.each do |article| %>

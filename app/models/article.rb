@@ -7,8 +7,3 @@ class Article < ApplicationRecord
   validates :body, presence: true, length: { minimum: 10 }
   validates :status, presence: true, inclusion: { in: %w[public private archived] }
 end
-
-class Comment < ApplicationRecord
-  belongs_to :article, dependent: :destroy
-  belongs_to :user
-end

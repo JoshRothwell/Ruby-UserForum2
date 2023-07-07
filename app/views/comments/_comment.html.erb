@@ -1,12 +1,10 @@
 <p>
-  <strong><%= comment.user.username %></strong>
+  <p><%= link_to comment.user.username, user_profile_path(comment.user.user_profile) %></p>
+
 </p>
 <p>
   <%= comment.body %>
 </p>
 <p>
-<p>
-<%= link_to "Delete", article_comment_path(@article, comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>
-
-</p>
+<%= link_to "Delete", delete_comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>
 </p>
