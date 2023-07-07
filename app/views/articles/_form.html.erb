@@ -1,23 +1,15 @@
-<%= form_with model: article do |form| %>
-<div>
-  <%= form.label :title %><br>
-  <%= form.text_field :title %><br>
-  <% article.errors.full_messages_for(:title).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
-</div>
-<div>
-  <%= form.label :body %><br>
-  <%= form.text_area :body %><br>
-  <% article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
-</div>
-<div>
-  <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-</div>
-<div>
-  <%= form.submit %>
-</div>
+<%= form_with(model: article, url: article.persisted? ? article_path(article) : articles_path, method: article.persisted? ? :patch : :post) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit article.persisted? ? "Update Article" : "Create Article" %>
+  </div>
 <% end %>

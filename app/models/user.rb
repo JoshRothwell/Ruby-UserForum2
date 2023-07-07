@@ -4,12 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-          # ...
-        
-          enum role: { regular: 'Regular', admin: 'Admin' }
-          validates :username, presence: true, uniqueness: true
-        
-          # ...
-      
-        
+  has_many :articles, dependent: :destroy
+  
+  enum role: { regular: 'Regular', admin: 'Admin' }
+  validates :username, presence: true, uniqueness: true
+
+  # ...
 end

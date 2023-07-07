@@ -1,3 +1,23 @@
 <h1>New Article</h1>
-<%= render "form", article: @article %>
-<%= link_to "Back Home", articles_path %>
+
+<%= form_with(model: @article, url: articles_path, method: :post) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <% if @article.errors.has_key?(:title) %>
+    <p class="error"><%= @article.errors[:title].first %></p>
+  <% end %>
+
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+  <% if @article.errors.has_key?(:body) %>
+    <p class="error"><%= @article.errors[:body].first %></p>
+  <% end %>
+
+  <%= form.label :status %>
+  <%= form.select :status, Article::VALID_STATUSES %>
+  <% if @article.errors.has_key?(:status) %>
+    <p class="error"><%= @article.errors[:status].first %></p>
+  <% end %>
+
+  <%= form.submit "Create Article" %>
+<% end %>

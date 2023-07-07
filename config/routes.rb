@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 
-  # Define your other application routes here
+  delete '/articles/delete/:id', to: 'articles#destroy', as: :delete_article
+  delete '/comments/:id', to: 'comments#destroy', as: :delete_comment
 end
