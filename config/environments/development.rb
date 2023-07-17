@@ -13,7 +13,6 @@ Rails.application.configure do
 
   config.log_level = :debug
 
-
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -59,10 +58,10 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  # Uncomment the following line if you want to suppress logger output for asset requests.
+  # config.assets.quiet = true
 
-  # Raises error for missing translations.
+  # Raises an error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
   # Annotate rendered view with file names.
@@ -71,3 +70,4 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end
+

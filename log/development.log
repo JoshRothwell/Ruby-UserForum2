@@ -28027,3 +28027,104 @@ Processing by UserProfilesController#show as HTML
 Completed 200 OK in 49ms (Views: 37.8ms | ActiveRecord: 1.2ms | Allocations: 9009)
 
 
+Started GET "/" for ::1 at 2023-07-17 12:13:47 +0100
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 14.3ms | Allocations: 768)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 222.0ms | Allocations: 6341)
+  Rendered shared/_navbar.html.erb (Duration: 14.1ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 395.7ms | Allocations: 47295)
+Completed 200 OK in 565ms (Views: 491.1ms | ActiveRecord: 0.9ms | Allocations: 58320)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-07-17 14:40:31 +0100
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/articles
+Completed 303 See Other in 440ms (ActiveRecord: 1.5ms | Allocations: 16829)
+
+
+Started GET "/articles" for ::1 at 2023-07-17 14:40:32 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 82.9ms | Allocations: 9997)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:4
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1679)
+  Rendered layout layouts/application.html.erb (Duration: 219.6ms | Allocations: 52338)
+Completed 200 OK in 267ms (Views: 225.7ms | ActiveRecord: 1.9ms | Allocations: 56240)
+
+
+Started GET "/news" for ::1 at 2023-07-17 14:40:35 +0100
+Processing by NewsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3791)
+
+
+  
+NameError (undefined local variable or method `fetch_news_articles' for #<NewsController:0x0000000000e5b0>
+
+      @articles = fetch_news_articles
+                  ^^^^^^^^^^^^^^^^^^^):
+  
+app/controllers/news_controller.rb:3:in `index'
+Started GET "/news" for ::1 at 2023-07-17 14:41:22 +0100
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/news_controller.rb:2:in `<class:NewsController>'
+app/controllers/news_controller.rb:1:in `<main>'
+Started GET "/news" for ::1 at 2023-07-17 14:43:05 +0100
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 636)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:4
+  Rendered shared/_navbar.html.erb (Duration: 24.3ms | Allocations: 9947)
+  Rendered layout layouts/application.html.erb (Duration: 171.0ms | Allocations: 51273)
+Completed 200 OK in 667ms (Views: 189.0ms | ActiveRecord: 1.3ms | Allocations: 58061)
+
+
+Started GET "/news" for ::1 at 2023-07-17 15:30:43 +0100
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering news/index.html.erb within layouts/application
+  Rendered news/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 637)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:4
+  Rendered shared/_navbar.html.erb (Duration: 22.3ms | Allocations: 9938)
+  Rendered layout layouts/application.html.erb (Duration: 165.4ms | Allocations: 51211)
+Completed 200 OK in 687ms (Views: 182.5ms | ActiveRecord: 1.4ms | Allocations: 58023)
+
+
+Started GET "/github" for ::1 at 2023-07-17 15:30:47 +0100
+Processing by GithubController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering github/index.html.erb within layouts/application
+  Rendered github/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 306)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:4
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 1546)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 6536)
+Completed 200 OK in 623ms (Views: 31.7ms | ActiveRecord: 0.2ms | Allocations: 9532)
+
+

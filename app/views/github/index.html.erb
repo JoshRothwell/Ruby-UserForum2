@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Projects</title>
+</head>
+<body>
+  <h1>GitHub Projects</h1>
+  <ul>
+    <% @projects.each do |project| %>
+      <li>
+        <h2><%= project['name'] %></h2>
+        <p><%= project['description'] %></p>
+        <a href="<%= project['html_url'] %>">Visit Project</a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
