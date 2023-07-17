@@ -13,5 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+
  @import 'bootstrap';
+
+ /* stylesheet1.css */
+
+/* Global Styles */
+body {
+    padding: 20px;
+    }
+    
+    h1 {
+    color: #4CAF50;
+    }
+    
+    p {
+    margin-bottom: 10px;
+    }
+    
+    /* Custom Styles */
+    .forum-header {
+    background-color: #78B69A;
+    }
+    
+    .nav-link {
+    color: #5FA27E;
+    }
+    
+    .forum-post {
+    background-color: #C1E5D3;
+    color: #4CAF50;
+    }
+    
+    /* Add your custom styles here */
+    
+
 

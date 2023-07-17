@@ -6,10 +6,13 @@
 
 <!-- Add the link to create a new article -->
 <%= link_to 'New Article', new_article_path %>
+<hr>
 <% @articles.each do |article| %>
-  <h2><%= link_to article.title, article %></h2>
-  <p><%= article.body %></p>
-  <p>Created by: <%= article.user.username %></p>
+  <div class="border p-3 mb-3">
+    <h2><%= link_to article.title, article %></h2>
+    <p><%= article.body %></p>
+    <p>Created by: <%= article.user.username %></p>
+  </div>
 
   <% if article.status == 'public' %>
     <!-- Display additional details or actions for public articles -->

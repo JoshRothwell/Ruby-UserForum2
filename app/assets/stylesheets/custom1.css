@@ -1,0 +1,48 @@
+/* Revert to Grey Background and Black Text */
+
+/* Global Styles */
+body {
+    padding: 20px;
+    background-color: #cecdcd; /* Grey background color */
+    color: #000000; /* Black text color */
+  }
+  
+  h1 {
+    color: #000000; /* Black header color */
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  /* Custom Styles */
+  .forum-header {
+    background-color: #F1F1F1; /* Grey background color */
+  }
+  
+  .nav-link {
+    color: #000000; /* Black link color */
+  }
+  
+  .forum-post {
+    background-color: #EFEFEF; /* Grey background color */
+    color: #000000; /* Black text color */
+  }
+
+  .border {
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .border h2,
+  .border p {
+    color: #333333;
+  }
+  
+  .border p {
+    margin-bottom: 0;
+  }
+  
+  /* Add your custom styles here */
+  
