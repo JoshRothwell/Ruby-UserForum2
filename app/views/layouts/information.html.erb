@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Information Page</title>
+  <!-- Add your stylesheet and other head elements -->
+</head>
+<body>
+  <header>
+    <!-- Add your common header content -->
+
+    <!-- Link/button to go back to the forum website -->
+    <%= link_to 'Back to Forum', root_path, class: 'back-link' %>
+  </header>
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <!-- Add your common footer content -->
+  </footer>
+
+  <!-- Add your JavaScript and other script elements -->
+</body>
+</html>

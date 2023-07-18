@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   get 'search', to: 'articles#search'
   get '/news', to: 'news#index'
   get '/github', to: 'github#index'
+  get '/information/welcome', to: 'welcome#show'
+  get '/information/about', to: 'about#show'
+  get '/welcome', to: 'welcome#welcome', as: 'welcome'
+  get '/about', to: 'about#about', as: 'about'
+
+
 
 
 end

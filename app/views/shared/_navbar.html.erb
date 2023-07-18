@@ -4,6 +4,7 @@
     <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
     <li><%= link_to 'News', news_path, class: 'nav-link' %></li>
     <li><%= link_to 'GitHub', github_path, class: 'nav-link' %></li>
+    <li><%= link_to 'About', about_path, class: 'nav-link' %></li>
     <% if user_signed_in? %>
       <li class="nav-item">
         <%= button_to 'Logout', destroy_user_session_path, method: :delete, form_class: 'nav-link' %>
