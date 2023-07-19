@@ -21,6 +21,10 @@ gem 'bcrypt', '~> 3.1.16'
 gem 'rspec'
 
 
+gem 'simplecov', require: false
+
+
+
 
 
 
