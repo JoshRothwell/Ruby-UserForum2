@@ -1,0 +1,50 @@
+# Ignore bundler installation directory
+/vendor/bundle/
+
+# Ignore the default SQLite database file
+/db/*.sqlite3
+
+# Ignore the default PostgreSQL database files
+/db/*.pid
+/db/*.conf
+/db/postgresql/
+
+# Ignore the default MySQL database files
+/db/*.err
+/db/*.pid
+/db/mysql/
+
+# Ignore local configuration files
+/config/database.yml
+/config/secrets.yml
+/config/master.key
+
+# Ignore public uploads or storage directories
+/public/uploads/
+/storage/*
+
+# Ignore log files
+/log/*.log
+
+# Ignore environment-specific files
+/.env*
+/.ruby-version
+/.ruby-gemset
+
+# Ignore any generated assets or compiled code
+/public/assets/
+/public/packs/
+/public/packs-test/
+
+# Ignore cache and temporary files
+/tmp/
+/.sass-cache/
+/.byebug_history
+/coverage/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore editor or IDE specific files
+.idea/
+.vscode/
