@@ -18,7 +18,18 @@ gem 'httparty'
 
 gem 'bcrypt', '~> 3.1.16'
 
-gem 'rspec'
+gem 'database_cleaner'
+
+
+group :development, :test do
+  gem 'rspec', '3.10.0'
+  gem 'rspec-rails', '5.0.0'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
+
 
 gem 'mini_racer', platforms: :ruby
 

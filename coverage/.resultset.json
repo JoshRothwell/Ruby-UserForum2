@@ -26,6 +26,78 @@
           null
         ]
       },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/articles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/github_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/news_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/user_profiles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/models/article.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/models/concerns/visible.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -617,54 +689,6 @@
         "branches": {
         }
       },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/articles_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/comments_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/github_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/news_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/helpers/user_profiles_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -688,48 +712,8 @@
         "branches": {
         }
       },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/models/article.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/models/comment.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/CADRepeat/blog/blog/Ruby-UserForum2/app/models/concerns/visible.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -756,6 +740,6 @@
         }
       }
     },
-    "timestamp": 1689774316
+    "timestamp": 1689776796
   }
 }

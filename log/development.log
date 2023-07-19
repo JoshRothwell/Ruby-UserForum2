@@ -31622,3 +31622,44 @@ Processing by AboutController#about as HTML
 Completed 200 OK in 12ms (Views: 8.3ms | Allocations: 1351)
 
 
+Started GET "/" for ::1 at 2023-07-19 15:01:56 +0100
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 75.9ms | Allocations: 768)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 385.2ms | Allocations: 6336)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 1241.6ms | Allocations: 49703)
+Completed 200 OK in 1491ms (Views: 1385.0ms | ActiveRecord: 1.1ms | Allocations: 60755)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-07-19 15:02:10 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/articles
+Completed 303 See Other in 339ms (ActiveRecord: 0.8ms | Allocations: 5810)
+
+
+Started GET "/articles" for ::1 at 2023-07-19 15:02:11 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:14
+  Rendered articles/index.html.erb within layouts/application (Duration: 96.8ms | Allocations: 9611)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:8
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 1535)
+  Rendered layout layouts/application.html.erb (Duration: 121.5ms | Allocations: 17436)
+Completed 200 OK in 154ms (Views: 128.7ms | ActiveRecord: 1.8ms | Allocations: 20388)
+
+
