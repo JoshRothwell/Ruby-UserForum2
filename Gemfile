@@ -18,6 +18,9 @@ gem 'httparty'
 
 gem 'bcrypt', '~> 3.1.16'
 
+gem 'rspec'
+
+
 
 
 
