@@ -7,6 +7,7 @@ class GithubController < ApplicationController
 
   private
 
+  # Fetches the user's GitHub projects using the GitHub API
   def fetch_github_projects
     username = 'JoshRothwell'
     token = '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'
@@ -16,4 +17,3 @@ class GithubController < ApplicationController
     response.parsed_response
   end
 end
-

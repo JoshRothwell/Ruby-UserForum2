@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
+  # This action creates a new comment for a specific article
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comment_params.merge(user_id: current_user.id))
@@ -12,7 +13,7 @@ class CommentsController < ApplicationController
     end
   end
   
-  
+  # This action destroys a comment
   def destroy
     @comment = Comment.find(params[:id])
   
@@ -26,21 +27,17 @@ class CommentsController < ApplicationController
       redirect_to root_path
     end
   end
-  
-  
-  
-  
-  
-  
 
   private
   
+  # Checks if the current user is authorized to delete the comment
   def can_delete_comment?(comment)
     current_user.admin? || comment.user == current_user
   end
 
   private
 
+  # Strong parameters for comment creation
   def comment_params
     params.require(:comment).permit(:body, :status).merge(user_id: current_user.id)
   end
