@@ -6,9 +6,17 @@ jobs:
     working_directory: /app
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - bundle-v1-{{ checksum "Gemfile.lock" }}
+            - bundle-v1-
       - run:
           name: Install dependencies
-          command: bundle install
+          command: bundle install --path vendor/bundle
+      - save_cache:
+          paths:
+            - vendor/bundle
+          key: bundle-v1-{{ checksum "Gemfile.lock" }}
       - run:
           name: Run tests
           command: bundle exec rspec
