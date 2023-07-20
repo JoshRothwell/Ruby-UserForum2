@@ -14,39 +14,279 @@
  *= require_self
  */
 
-
  @import 'bootstrap';
 
- /* stylesheet1.css */
+ /* Global Styles */
+ body {
+   padding: 20px;
+   background-color: #ffffff; /* White background color */
+ }
+ 
+ h1 {
+   color: #000000; /* Black font color for headings */
+ }
+ 
+ p {
+   margin-bottom: 10px;
+   color: #000000; /* Black font color for paragraphs */
+ }
+ 
+ /* Custom Styles */
+ .forum-header {
+   background-color: #78B69A;
+ }
+ 
+ .nav-link {
+   color: #5FA27E;
+ }
+ 
+ .forum-post {
+   background-color: #C1E5D3;
+   color: #4CAF50;
+ }
+ 
+ /* Add your custom styles here */
+ .delete-comment-button {
+   background-color: #f44336;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   text-decoration: none;
+ }
+ 
+ .delete-comment-button:hover {
+   background-color: #d32f2f;
+ }
+ 
+ .comment-form-container {
+   border: 1px solid #FFA500;
+   background-color: #FFEFD5;
+   padding: 10px;
+   margin-bottom: 20px;
+ }
+ 
+ .comment-form-container p {
+   margin-bottom: 10px;
+ }
+ 
+ .signup-form-container {
+   border: 1px solid #FFA500;
+   background-color: #FFEFD5;
+   padding: 20px; /* Increase padding for better spacing */
+   margin: 0 auto; /* Center the container horizontally */
+   max-width: 400px;
+   text-align: center;
+ }
+ 
+ .signup-form-container h2 {
+   margin-bottom: 20px;
+ }
+ 
+ .signup-form-container .field {
+   margin-bottom: 10px;
+   text-align: left; /* Align form labels and fields to the left */
+ }
+ 
+ .signup-form-container label {
+   display: block;
+   font-weight: bold;
+ }
+ 
+ .signup-form-container .actions {
+   margin-top: 20px;
+ }
+ 
+ .signup-form-container input[type="email"],
+ .signup-form-container input[type="text"],
+ .signup-form-container input[type="password"],
+ .signup-form-container select {
+   width: 100%;
+   padding: 10px;
+ }
+ 
+ .signup-form-container em {
+   font-style: italic;
+   font-size: 12px;
+ }
+ 
+ .signup-form-container input[type="submit"] {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+ }
+ 
+ .login-form-container {
+   border: 1px solid #CCC;
+   padding: 10px;
+   margin-bottom: 20px;
+   max-width: 400px;
+   margin: 0 auto;
+   text-align: center;
+ }
+ 
+ .login-form-container h2 {
+   margin-bottom: 20px;
+ }
+ 
+ .login-form-container .field {
+   margin-bottom: 10px;
+ }
+ 
+ .login-form-container label {
+   display: block;
+   font-weight: bold;
+ }
+ 
+ .login-form-container .actions {
+   margin-top: 20px;
+ }
+ 
+ .login-form-container input[type="email"],
+ .login-form-container input[type="password"] {
+   width: 100%;
+   padding: 10px;
+ }
+ 
+ .login-form-container input[type="submit"] {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+ }
+ 
+ /* ... Other styles ... */
+ 
+ /* Add your custom styles here */
+ 
+ .article-container {
+   background-color: #ffffff; /* White background color */
+   border: 1px solid #cccccc; /* Gray border for the entire article */
+   padding: 20px;
+   margin-bottom: 20px;
+ }
+ 
+ .article-container h1 {
+   color: #000000; /* Black font color for article title */
+   margin-bottom: 10px;
+ }
+ 
+ .article-container p {
+   margin-bottom: 10px;
+   color: #000000; /* Black font color for article body */
+ }
+ 
+ .article-container ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ }
+ 
+ .article-container ul li {
+   display: inline;
+   margin-right: 10px;
+ }
+ 
+ .article-container a {
+   color: #007bff; /* Blue color for links */
+   text-decoration: none;
+ }
+ 
+ .article-container a:hover {
+   text-decoration: underline;
+ }
+ 
+ .comment-section {
+   margin-top: 20px;
+   border-top: 1px solid #ccc;
+   padding-top: 10px;
+ }
+ 
+ /* Edit and Delete Buttons */
+ .edit-article-button,
+ .delete-article-button {
+   background-color: #007bff; /* Blue background color for edit button */
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+   text-decoration: none;
+   border-radius: 5px;
+   margin-right: 10px;
+ }
+ 
+ .edit-article-button:hover,
+ .delete-article-button:hover {
+   background-color: #0056b3; /* Darker blue color on hover */
+ }
+ 
+ .delete-article-button {
+   background-color: #f44336; /* Red background color for delete button */
+   color: black; /* Black text color for better readability */
+ }
+ 
+ .delete-article-button:hover {
+   background-color: #d32f2f; /* Darker red color on hover */
+ }
+ 
+ /* Style the text color for the edit button when the background is blue */
+ .edit-article-button {
+   color: black; /* Black text color for better readability on blue background */
+ }
+ 
+ /* Comment Container */
+ .comment-container {
+   background-color: #ffffff; /* White background color */
+   border: 1px solid #cccccc; /* Gray border for comments */
+   padding: 10px;
+   margin-bottom: 10px;
+ }
+ 
+ .comment-container b {
+   color: #000000; /* Black font color for username */
+ }
+ 
+ .comment-container p {
+   color: #000000; /* Black font color for comment body */
+ }
+ 
+ .comment-container a {
+   color: #007bff; /* Blue color for links */
+   text-decoration: none;
+ }
+ 
+ .comment-container a:hover {
+   text-decoration: underline;
+ }
 
-/* Global Styles */
-body {
-    padding: 20px;
-    }
-    
-    h1 {
-    color: #4CAF50;
-    }
-    
-    p {
-    margin-bottom: 10px;
-    }
-    
-    /* Custom Styles */
-    .forum-header {
-    background-color: #78B69A;
-    }
-    
-    .nav-link {
-    color: #5FA27E;
-    }
-    
-    .forum-post {
-    background-color: #C1E5D3;
-    color: #4CAF50;
-    }
-    
-    /* Add your custom styles here */
-    
+ .comment-form-container {
+  border: 1px solid #FFD700; /* Yellow border for the comment form */
+  background-color: #FFFFE0; /* Yellow background color */
+  padding: 10px; /* Add some padding to create space between the border and content */
+  margin-bottom: 20px; /* Add some margin at the bottom of the comment form */
+}
+
+/* Add your custom styles here */
+
+.user-profile-container {
+  background-color: #ffffff; /* White background color */
+  border: 1px solid #cccccc; /* Gray border for the container */
+  padding: 20px; /* Add some padding inside the container */
+  margin-bottom: 20px; /* Add some margin at the bottom of the container */
+}
+
+.user-profile-container h1 {
+  color: #000000; /* Black font color for the username */
+  margin-bottom: 10px; /* Add some margin below the username */
+}
+
+.user-profile-container p {
+  margin-bottom: 5px; /* Add a little margin between paragraphs */
+}
+
+/* Additional styles can be added as needed */
 
 
+ 

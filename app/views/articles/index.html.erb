@@ -3,15 +3,19 @@
   <%= submit_tag 'Search' %>
 <% end %>
 
-
 <!-- Add the link to create a new article -->
 <%= link_to 'New Article', new_article_path %>
 <hr>
+
 <% @articles.each do |article| %>
   <div class="border p-3 mb-3">
     <h2><%= link_to article.title, article %></h2>
     <p><%= article.body %></p>
-    <p>Created by: <%= article.user.username %></p>
+    <% if article.user.user_profile %>
+      <p>Created by: <b><%= link_to article.user.username, user_profile_path(article.user.user_profile) %></b></p>
+    <% else %>
+      <p>Created by: <b><%= article.user.username %></b></p>
+    <% end %>
   </div>
 
   <% if article.status == 'public' %>
