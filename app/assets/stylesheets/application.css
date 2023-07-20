@@ -267,26 +267,31 @@
   padding: 10px; /* Add some padding to create space between the border and content */
   margin-bottom: 20px; /* Add some margin at the bottom of the comment form */
 }
-
-/* Add your custom styles here */
-
 .user-profile-container {
   background-color: #ffffff; /* White background color */
-  border: 1px solid #cccccc; /* Gray border for the container */
-  padding: 20px; /* Add some padding inside the container */
-  margin-bottom: 20px; /* Add some margin at the bottom of the container */
+  border: 1px solid #cccccc; /* Gray border for the user profile container */
+  padding: 10px;
+  margin-bottom: 20px;
+  max-width: 50%; /* Limit the horizontal size to about half the page */
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto;
 }
 
 .user-profile-container h1 {
   color: #000000; /* Black font color for the username */
-  margin-bottom: 10px; /* Add some margin below the username */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .user-profile-container p {
-  margin-bottom: 5px; /* Add a little margin between paragraphs */
+  margin-bottom: 5px; /* Add a little margin between paragraphs within the user profile container */
 }
 
-/* Additional styles can be added as needed */
+.user-profile-container b {
+  font-weight: bold;
+}
 
+/*The styling for pretty much every page minus the page that utilizes the Template Design Pattern uses this one .css file.*/
 
- 
+/*I originally wanted different pages to be styled differently, but ended up just sticking to this one.*/
