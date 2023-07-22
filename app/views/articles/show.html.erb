@@ -8,7 +8,9 @@
     <p><%= @article.body %></p>
   </div>
 
-  <% if @article.status == 'public' || current_user&.admin? || @article.user == current_user %>
+    <!--This is to ensure that only the authorized user(s) can see the options to edit or delete records. -->
+
+  <% if @article.status == 'public' && (current_user&.admin? || @article.user == current_user) %>
     <div class="article-actions">
       <ul>
         <li>
@@ -21,6 +23,9 @@
     </div>
   <% end %>
 </div>
+
+    <!--I have no idea why, but making the comments form render before the comments section causes the
+    application to break, so it's just like this. -->
 
 <div class="article-comments">
   <h2>Comments</h2>

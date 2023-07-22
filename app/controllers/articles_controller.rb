@@ -34,15 +34,22 @@ class ArticlesController < ApplicationController
   end
 
   # POST /articles
-  def create
-    @article = current_user.articles.build(article_params)
-    if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
-    else
-      puts @article.errors.full_messages.inspect
-      render :new, status: :unprocessable_entity
-    end
+# POST /articles
+def create
+  @article = current_user.articles.build(article_params)
+  if @article.save
+    # Log the information using the Singleton logger
+    my_logger = MyLogger.instance
+    log_message = "A new article has been created: " + @article.title
+    my_logger.logInformation(log_message)
+
+    redirect_to @article, notice: 'Article was successfully created.'
+  else
+    puts @article.errors.full_messages.inspect
+    render :new, status: :unprocessable_entity
   end
+end
+
 
   # GET /articles/:id/edit
   def edit
@@ -82,6 +89,12 @@ class ArticlesController < ApplicationController
         puts "Deleting article..."
         @article.destroy! # Delete the article
       end
+
+      # Log the information using the Singleton logger
+      my_logger = MyLogger.instance
+      log_message = "The following article has been deleted: " + @article.title
+      my_logger.logInformation(log_message)
+
       redirect_to articles_path, notice: "Article and associated comments successfully deleted."
     rescue ActiveRecord::RecordNotDestroyed => e
       redirect_to article_path(@article), alert: "Failed to delete the article and associated comments."

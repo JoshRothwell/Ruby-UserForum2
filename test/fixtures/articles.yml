@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Sample Article
+  body: This is a sample article.
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.hour.ago %>
+
 
 two:
-  title: MyString
-  body: MyText
+  title: Sample Article2
+  body: This is a sample article.
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.hour.ago %>
+

@@ -1,4 +1,5 @@
 require 'test_helper'
+# Unit test to test article model
 
 class ArticleTest < ActiveSupport::TestCase
   test "should not save article without a title" do
@@ -10,7 +11,5 @@ class ArticleTest < ActiveSupport::TestCase
     article = Article.new(title: "New Article", body: "Lorem ipsum")
     assert article.save, "Failed to save the article with a unique title"
   end
-  
-  # Add more test methods as needed
   
 end

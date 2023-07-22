@@ -1,23 +1,27 @@
-<h1>New Article</h1>
+<!-- app/views/articles/new.html.erb -->
 
-<%= form_with(model: @article, url: articles_path, method: :post) do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <% if @article.errors.has_key?(:title) %>
-    <p class="error"><%= @article.errors[:title].first %></p>
+<div class="form-container">
+  <h1>New Article</h1>
+
+  <%= form_with(model: @article, url: articles_path, method: :post) do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% if @article.errors.has_key?(:title) %>
+      <p class="error"><%= @article.errors[:title].first %></p>
+    <% end %>
+
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <% if @article.errors.has_key?(:body) %>
+      <p class="error"><%= @article.errors[:body].first %></p>
+    <% end %>
+
+    <%= form.label :status %>
+    <%= form.select :status, Article::VALID_STATUSES %>
+    <% if @article.errors.has_key?(:status) %>
+      <p class="error"><%= @article.errors[:status].first %></p>
+    <% end %>
+
+    <%= form.submit "Create Article" %>
   <% end %>
-
-  <%= form.label :body %>
-  <%= form.text_area :body %>
-  <% if @article.errors.has_key?(:body) %>
-    <p class="error"><%= @article.errors[:body].first %></p>
-  <% end %>
-
-  <%= form.label :status %>
-  <%= form.select :status, Article::VALID_STATUSES %>
-  <% if @article.errors.has_key?(:status) %>
-    <p class="error"><%= @article.errors[:status].first %></p>
-  <% end %>
-
-  <%= form.submit "Create Article" %>
-<% end %>
+</div>

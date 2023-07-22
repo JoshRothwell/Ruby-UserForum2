@@ -1492,3 +1492,206 @@ ArticleTest: test_should_not_save_article_without_a_title
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (4.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "user_profiles";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-07-22 17:32:22.308652', '2023-07-22 17:32:22.308652');
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-07-22 17:32:22.308652', '2023-07-22 17:32:22.308652');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 980190962, '2023-07-22 17:32:22.310771', '2023-07-22 17:32:22.310771');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (298486374, 'MyText', 298486374, '2023-07-22 17:32:22.310771', '2023-07-22 17:32:22.310771');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (980190962, 980190962, 'MyText', 'MyString', 1, '2023-07-22 17:32:22.312011', '2023-07-22 17:32:22.312011');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (298486374, 298486374, 'MyText', 'MyString', 1, '2023-07-22 17:32:22.312011', '2023-07-22 17:32:22.312011');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (980190962, 'user1@example.com', '$2a$12$B/O2lQBddSPj2dAwSKCBMuiRNEw0/EKJ3Vbiv4LjpsCwIkcOS7QlC', '2023-07-22 17:32:22.313534', '2023-07-22 17:32:22.313534', 'User1');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (298486374, 'user2@example.com', '$2a$12$99gvEpuVtL6Sw.L0SfQaSOBeDwPC0D7.lIXBOKDIF4btXZgP0RfBG', '2023-07-22 17:32:22.313534', '2023-07-22 17:32:22.313534', 'User2')[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ArticlesTest: test_updating_an_article
+--------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (6.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "user_profiles";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-07-22 19:44:45.063429', '2023-07-22 19:44:45.063429');
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-07-22 19:44:45.063429', '2023-07-22 19:44:45.063429');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 980190962, '2023-07-22 19:44:45.065340', '2023-07-22 19:44:45.065340');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (298486374, 'MyText', 298486374, '2023-07-22 19:44:45.065340', '2023-07-22 19:44:45.065340');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (980190962, 980190962, 'MyText', 'MyString', 1, '2023-07-22 19:44:45.066516', '2023-07-22 19:44:45.066516');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (298486374, 298486374, 'MyText', 'MyString', 1, '2023-07-22 19:44:45.066516', '2023-07-22 19:44:45.066516');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (980190962, 'user1@example.com', '$2a$12$mBzUDfaetKdE8pfDqxl.1O18wPswkMCVu52X0aVUsUP48NCs3dUxS', '2023-07-22 19:44:45.068080', '2023-07-22 19:44:45.068080', 'User1');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (298486374, 'user2@example.com', '$2a$12$rALufkjtoYAAD.UbDipXVewKZ1McJpHlgRZRjvCzaS/mm0GDnax/e', '2023-07-22 19:44:45.068080', '2023-07-22 19:44:45.068080', 'User2')[0m
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+ArticleTest: test_should_not_save_article_without_a_title
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+ArticleTest: test_should_save_article_with_a_unique_title
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (6.4ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "user_profiles";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-07-22 19:52:17.340764', '2023-07-22 19:52:17.340764');
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-07-22 19:52:17.340764', '2023-07-22 19:52:17.340764');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 980190962, '2023-07-22 19:52:17.342720', '2023-07-22 19:52:17.342720');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (298486374, 'MyText', 298486374, '2023-07-22 19:52:17.342720', '2023-07-22 19:52:17.342720');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (980190962, 980190962, 'MyText', 'MyString', 1, '2023-07-22 19:52:17.343896', '2023-07-22 19:52:17.343896');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (298486374, 298486374, 'MyText', 'MyString', 1, '2023-07-22 19:52:17.343896', '2023-07-22 19:52:17.343896');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (980190962, 'user1@example.com', '$2a$12$Y8BrAhv2O50sYunquyuXJe6mjNdfx8uvtNolE7.j.NTWxqX2IyxuG', '2023-07-22 19:52:17.345374', '2023-07-22 19:52:17.345374', 'User1');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (298486374, 'user2@example.com', '$2a$12$Lj83Re/nseIiQoFARqHap.YlmEuQ4jfhgUOKJZ0MZaacyimjhxtjm', '2023-07-22 19:52:17.345374', '2023-07-22 19:52:17.345374', 'User2')[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ArticlesTest: test_deleting_an_article
+--------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ArticlesTest: test_updating_an_article
+--------------------------------------
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+ArticlesTest: test_visiting_the_index
+-------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ArticlesTest: test_creating_a_new_article
+-----------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (2.2ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "user_profiles";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (980190962, 'Sample Article', 'This is a sample article.', '2023-07-21 20:11:53', '2023-07-22 19:11:53');
+INSERT INTO "articles" ("id", "title", "body", "created_at", "updated_at") VALUES (298486374, 'Sample Article2', 'This is a sample article.', '2023-07-21 20:11:53', '2023-07-22 19:11:53');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 980190962, '2023-07-22 20:11:53.556048', '2023-07-22 20:11:53.556048');
+INSERT INTO "comments" ("id", "body", "article_id", "created_at", "updated_at") VALUES (298486374, 'MyText', 298486374, '2023-07-22 20:11:53.556048', '2023-07-22 20:11:53.556048');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (980190962, 980190962, 'MyText', 'MyString', 1, '2023-07-22 20:11:53.557176', '2023-07-22 20:11:53.557176');
+INSERT INTO "user_profiles" ("id", "user_id", "body", "role", "post_count", "created_at", "updated_at") VALUES (298486374, 298486374, 'MyText', 'MyString', 1, '2023-07-22 20:11:53.557176', '2023-07-22 20:11:53.557176');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (980190962, 'user1@example.com', '$2a$12$IDsl2aJqcMejLlP7/UZBSeprkn/fq/D9/DE0xw2dKa9aLsMtxvPhK', '2023-07-22 20:11:53.558855', '2023-07-22 20:11:53.558855', 'User1');
+INSERT INTO "users" ("id", "email", "encrypted_password", "created_at", "updated_at", "username") VALUES (298486374, 'user2@example.com', '$2a$12$ID8afbDusyZ4/Fj2xlLbeuAXcUw3Xnq8Z2oYq1KtHPaoph.0QGH5u', '2023-07-22 20:11:53.558855', '2023-07-22 20:11:53.558855', 'User2')[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ArticlesControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/articles" for 127.0.0.1 at 2023-07-22 21:11:54 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (Duration: 49.6ms | Allocations: 4097)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 4160)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.1ms | Allocations: 9474)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ArticlesControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ArticlesControllerTest: test_should_update_article
+--------------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ArticlesControllerTest: test_should_create_article
+--------------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+Started POST "/articles" for 127.0.0.1 at 2023-07-22 21:11:55 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"title"=>"New Article", "content"=>"Lorem ipsum"}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 439)
+  [1m[36mCACHE Article Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+ArticlesControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/articles/new" for 127.0.0.1 at 2023-07-22 21:11:55 +0100
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 232)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ArticlesControllerTest: test_should_get_show
+--------------------------------------------
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ArticlesControllerTest: test_should_destroy_article
+---------------------------------------------------
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+ArticlesControllerTest - test_should_destroy_article: ActionController::UrlGenerationError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m

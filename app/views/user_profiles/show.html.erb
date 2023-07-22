@@ -1,6 +1,14 @@
 <div class="user-profile-container">
   <h1><%= @user.username %></h1>
-  <p><%= @user.user_profile.body %></p>
-  <p><b>Role:</b> <%= @user.user_profile.role %></p>
-  <p><b>Post Count:</b> <%= @user.user_profile.post_count %></p>
+  <% if @user.user_profile %>
+  
+    <p><%= @user.user_profile.body %></p>
+    <p><b>Role:</b> <%= @user.user_profile.role %></p>
+    <p><b>Post Count:</b> <%= @user.user_profile.post_count %></p>
+  <% else %>
+      <!--This is in the event that the user doesn't actually have a user profile created, this only really
+      occurs with users that are created via rails db:seed, but better safe than sorry. -->
+
+    <p>No user profile available.</p>
+  <% end %>
 </div>

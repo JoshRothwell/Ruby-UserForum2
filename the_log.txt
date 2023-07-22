@@ -1,0 +1,15 @@
+-----start-----
+The following article has been deleted: Permissions Test 01
+-----end-----
+-----start-----
+A new article has been created: Test to see if this breaks.
+-----end-----
+-----start-----
+A new article has been created: Test Article For Presentation
+-----end-----
+-----start-----
+A new article has been created: TestArticleArchive
+-----end-----
+-----start-----
+A new article has been created: TestArticlePrivate
+-----end-----

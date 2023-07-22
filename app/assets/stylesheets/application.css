@@ -292,6 +292,65 @@
   font-weight: bold;
 }
 
+/* app/assets/stylesheets/articles.css */
+
+/* Custom styles for the new article form */
+.form-container {
+  max-width: 600px; /* Limit the width of the form container */
+  margin: 0 auto; /* Center the form container horizontally */
+  padding: 20px; /* Add some padding to the form container */
+  background-color: #f9f9f9; /* Set a light background color for the form container */
+  border: 1px solid #ccc; /* Add a border around the form container */
+  border-radius: 5px; /* Add rounded corners to the form container */
+}
+
+.form-container h1 {
+  color: #333; /* Set the font color for the form title */
+  font-size: 24px; /* Increase the font size for the form title */
+  font-weight: bold; /* Make the form title bold */
+  margin-bottom: 20px; /* Add some margin at the bottom of the form title */
+}
+
+.form-container label {
+  display: block; /* Display the form labels as blocks */
+  font-weight: bold; /* Make the form labels bold */
+  margin-bottom: 5px; /* Add some margin at the bottom of the form labels */
+}
+
+.form-container input[type="text"],
+.form-container textarea,
+.form-container select {
+  width: 100%; /* Make the form input fields and select dropdowns span the full width */
+  padding: 10px; /* Add padding to the form input fields and select dropdowns */
+  margin-bottom: 10px; /* Add some margin at the bottom of the form input fields and select dropdowns */
+  border: 1px solid #ccc; /* Add a border to the form input fields and select dropdowns */
+  border-radius: 5px; /* Add rounded corners to the form input fields and select dropdowns */
+}
+
+.form-container .error {
+  color: #f44336; /* Set the font color for error messages to red */
+  font-size: 14px; /* Set the font size for error messages */
+  margin-bottom: 10px; /* Add some margin at the bottom of error messages */
+}
+
+.form-container select {
+  height: 50px; /* Set the height of the select dropdowns */
+}
+
+.form-container input[type="submit"] {
+  background-color: #4CAF50; /* Set the background color for the submit button to green */
+  color: white; /* Set the font color for the submit button to white */
+  border: none; /* Remove borders from the submit button */
+  padding: 10px 20px; /* Add padding to the submit button */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  border-radius: 5px; /* Add rounded corners to the submit button */
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #45a049; /* Darken the background color on hover */
+}
+
+
 /*The styling for pretty much every page minus the page that utilizes the Template Design Pattern uses this one .css file.*/
 
 /*I originally wanted different pages to be styled differently, but ended up just sticking to this one.*/

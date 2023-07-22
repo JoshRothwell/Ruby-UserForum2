@@ -17,3 +17,4 @@ def fetch_news_articles
 end
 
 fetch_news_articles
+

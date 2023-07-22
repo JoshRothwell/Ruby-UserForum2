@@ -1,11 +1,20 @@
 <div class="comment-container">
   <% if comment.user %>
-    <b><%= link_to comment.user.username, user_profile_path(comment.user.user_profile) %></b>
+    <% if comment.user.user_profile %>
+      <b><%= link_to comment.user.username, user_profile_path(comment.user.user_profile) %></b>
+    <% else %>
+      <b><%= comment.user.username %></b>
+    <% end %>
   <% else %>
-    <b>Anonymous User</b>
+  <!--This is in the event that a user has been deleted or their username field has been left empty -->
+    <b>Anonymous User</b> 
   <% end %>
   <p><%= comment.body %></p>
   <p>
-    <%= link_to "Delete", delete_comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>
+    <!--This is to ensure that only the authorized user(s) can see the options to edit or delete records. -->
+
+    <% if comment.user && comment.user == current_user || current_user&.admin? %>
+      <%= link_to "Delete", delete_comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>
+    <% end %>
   </p>
 </div>
