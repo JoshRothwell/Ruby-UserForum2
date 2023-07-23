@@ -12,13 +12,20 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+# External Gem
 gem 'rails-ujs'
 
+# External Gem
 gem 'httparty'
 
+# External Gem
 gem 'bcrypt', '~> 3.1.16'
 
+# External Gem
 gem 'database_cleaner'
+
+# Unsuccessful attempt at implementing a custom gem.
+# gem 'article_tagging', path: 'article_tagging'
 
 
 group :development, :test do
@@ -30,17 +37,12 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
-
+# External Gem
 gem 'mini_racer', platforms: :ruby
 
 
-
+# External Gem
 gem 'simplecov', require: false
-
-
-
-
-
 
 
 
@@ -71,8 +73,10 @@ gem "jbuilder"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
+# External Gem
 gem 'devise'
 
+# External Gem
 gem 'bootstrap', '~> 5.0'
 
 # Reduces boot times through caching; required in config/boot.rb
