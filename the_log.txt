@@ -13,3 +13,6 @@ A new article has been created: TestArticleArchive
 -----start-----
 A new article has been created: TestArticlePrivate
 -----end-----
+-----start-----
+A new article has been created: Thoughts on Ruby?
+-----end-----

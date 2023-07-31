@@ -10,7 +10,7 @@ class GithubController < ApplicationController
   # Fetches the user's GitHub projects using the GitHub API
   def fetch_github_projects
     username = 'JoshRothwell'
-    token = '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'
+    token = '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'
     url = "https://api.github.com/users/#{username}/repos"
     headers = { 'Authorization' => "Bearer #{token}" }
     response = HTTParty.get(url, headers: headers)
