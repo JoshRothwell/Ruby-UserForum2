@@ -1,15 +1,19 @@
 <%= form_with(model: article, url: article.persisted? ? article_path(article) : articles_path, method: article.persisted? ? :patch : :post) do |form| %>
+  <!-- The `form_with` helper creates a form that maps to the `article` model.
+   This form is what creates the view that displays the title and body of an article, and is called
+   upon in other parts of the application. -->
+  
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title %> <!-- Displays a `title -->
+    <%= form.text_field :title %> <!-- Creates a text input field for the `title` attribute of the article model -->
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.label :body %> <!-- Displays the body heading-->
+    <%= form.text_area :body %> <!-- Create a text input field for the `body` attribute of the article model -->
   </div>
 
   <div class="actions">
-    <%= form.submit article.persisted? ? "Update Article" : "Create Article" %>
+    <%= form.submit article.persisted? ? "Update Article" : "Create Article" %> <!-- Creates the view for creating a new article or updating an existing one -->
   </div>
 <% end %>

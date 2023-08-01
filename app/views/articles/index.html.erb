@@ -6,12 +6,15 @@
 <!-- Add the link to create a new article -->
 <%= link_to 'New Article', new_article_path %>
 <hr>
+  <!--Displays each article within the database -->
 
 <% @articles.each do |article| %>
   <div class="border p-3 mb-3">
     <h2><%= link_to article.title, article %></h2>
     <p><%= article.body %></p>
     <% if article.user.user_profile %>
+      <!--Displays the name of the user who created the article, also acts as a link to the user profile. -->
+
       <p>Created by: <b><%= link_to article.user.username, user_profile_path(article.user.user_profile) %></b></p>
     <% else %>
       <p>Created by: <b><%= article.user.username %></b></p>

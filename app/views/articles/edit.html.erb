@@ -2,10 +2,11 @@
 
 <% if current_user && (@article.user == current_user || current_user.admin?) %>
   <%= render "form", article: @article %>
+    <!--Calls on and Displays the article form -->
+
 <% else %>
   <p>You don't have permission to edit this article.</p>
+  <!--Display is the user lacks the permissions to edit an article -->
 <% end %>
-
-
 
 <%= link_to "Back Home", articles_path %>

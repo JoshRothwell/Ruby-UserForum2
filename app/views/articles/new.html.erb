@@ -1,7 +1,9 @@
-<!-- app/views/articles/new.html.erb -->
-
 <div class="form-container">
+  <!--Form for creating new articles -->
+
   <h1>New Article</h1>
+
+  <!--form for article titles -->
 
   <%= form_with(model: @article, url: articles_path, method: :post) do |form| %>
     <%= form.label :title %>
@@ -9,6 +11,8 @@
     <% if @article.errors.has_key?(:title) %>
       <p class="error"><%= @article.errors[:title].first %></p>
     <% end %>
+
+  <!--form for article bodies -->
 
     <%= form.label :body %>
     <%= form.text_area :body %>

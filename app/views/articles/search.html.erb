@@ -4,6 +4,8 @@
 
 <% if @articles.any? %>
   <ul>
+    <!--Method that discerns whether any articles are found under the query -->
+
     <% @articles.each do |article| %>
       <li><%= link_to article.title, article_path(article) %></li>
     <% end %>

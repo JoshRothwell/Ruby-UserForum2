@@ -6,13 +6,13 @@
 <body>
   <h1>GitHub Projects</h1>
   <ul>
-    <% @projects.each do |project| %>
+    <% @projects.each do |project| %> <!-- Iterate over the @projects array passed from the controller -->
       <li>
-        <h2><%= project['name'] %></h2>
-        <p><%= project['description'] %></p>
-        <a href="<%= project['html_url'] %>">Visit Project</a>
+        <h2><%= project['name'] %></h2> <!-- Display the name of a project -->
+        <p><%= project['description'] %></p> <!-- Display the 'description of a  project -->
+        <a href="<%= project['html_url'] %>">Visit Project</a> <!-- Create a link to a project -->
       </li>
-    <% end %>
+    <% end %> <!-- End of the loop -->
   </ul>
 </body>
 </html>

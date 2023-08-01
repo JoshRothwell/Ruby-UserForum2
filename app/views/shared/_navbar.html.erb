@@ -1,12 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#" style="font-size: 28px;">Ruby Forum</a>
   <ul class="navbar-nav">
+  <!-- Links to the various different pages -->
     <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
     <li><%= link_to 'News', news_path, class: 'nav-link' %></li>
     <li><%= link_to 'GitHub', github_path, class: 'nav-link' %></li>
     <li><%= link_to 'About', about_path, class: 'nav-link' %></li>
     <% if user_signed_in? %>
       <li class="nav-item">
+      <!-- Login/Logout should only appear depending on whether the user is logged in/out -->
         <%= button_to 'Logout', destroy_user_session_path, method: :delete, form_class: 'nav-link' %>
       </li>
     <% else %>

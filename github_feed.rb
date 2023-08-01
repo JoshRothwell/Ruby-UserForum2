@@ -17,3 +17,6 @@ projects.each do |project|
   puts "URL: #{project['html_url']}"
   puts '---'
 end
+
+# This file is responsible for the initialisation of the github API, this is where the data from
+# my Github repository is fed into, it passes the nesscary credentials to access the information.

@@ -1,4 +1,5 @@
 <h1>News Articles</h1>
+<!-- Fetches news articles from the API, displays the title, description and link. -->
 <% @articles.each do |article| %>
   <h2><%= article['title'] %></h2>
   <p><%= article['description'] %></p>

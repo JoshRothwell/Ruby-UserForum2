@@ -11,6 +11,9 @@
     <!--This is to ensure that only the authorized user(s) can see the options to edit or delete records. -->
 
   <% if @article.status == 'public' && (current_user&.admin? || @article.user == current_user) %>
+    <!--Authorized users should only be able to see these options, there also exists an additional
+    failsafe in the event this fails, in that unauthorized auathors cannot access the links. -->
+
     <div class="article-actions">
       <ul>
         <li>

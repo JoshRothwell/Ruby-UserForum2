@@ -1,5 +1,8 @@
 require 'httparty'
 
+# This file is responsible for the initialisation of the GNews API, this is where the data from
+# The news feed is currently set to filter news articles that are tagged under "technology"
+
 def fetch_news_articles
   api_key = 'b05bfa6ab56783e5d4854dd137093fb6'
   query = 'technology'
