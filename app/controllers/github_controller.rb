@@ -13,7 +13,7 @@ class GithubController < ApplicationController
   # If this occours, please let me know and I can create a new key and push a fix to the Github Repository.
   def fetch_github_projects
     username = 'JoshRothwell'
-    token = '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'
+    token = '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'
     url = "https://api.github.com/users/#{username}/repos"
     headers = { 'Authorization' => "Bearer #{token}" }
     response = HTTParty.get(url, headers: headers)

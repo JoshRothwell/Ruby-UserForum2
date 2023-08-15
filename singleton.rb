@@ -8,6 +8,7 @@ class SingletonExample
       end
     end
   
+    #This was basically just a default method I used while figuring out how singleton works.
     def some_method
       puts "Hello, I am the singleton instance!"
     end
