@@ -19,4 +19,5 @@ class GithubController < ApplicationController
     response = HTTParty.get(url, headers: headers)
     response.parsed_response
   end
+  # Comment for presentation
 end
